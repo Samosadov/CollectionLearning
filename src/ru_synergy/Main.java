@@ -1,8 +1,5 @@
 package ru_synergy;
 
-import org.w3c.dom.ls.LSOutput;
-
-import javax.crypto.spec.PSource;
 import java.util.*;
 
 public class Main {
@@ -98,5 +95,16 @@ public class Main {
 
         TreeSet<Cat> catTreeSet = new TreeSet(catsList);
         System.out.println(catTreeSet);
+
+//        Map
+        Map<String, Double> gazoline = new HashMap<>();
+        gazoline.put("92", 50.0);
+        gazoline.put("95", 55.0);
+        gazoline.put("Diesel", 49.0);
+        System.out.println(gazoline);
+        for(Map.Entry<String, Double> entry : gazoline.entrySet()) {
+            gazoline.replace(entry.getKey(), entry.getValue() * 2);
+            System.out.printf("Бензин: %s, цена: %e\n", entry.getKey(), entry.getValue());
+        }
     }
 }
