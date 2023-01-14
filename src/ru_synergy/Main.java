@@ -1,6 +1,7 @@
 package ru_synergy;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -17,7 +18,17 @@ public class Main {
         ArrayList<Cat> catsList = new ArrayList<>();
         catsList.addAll(List.of(cats));
         catsList.add(new Cat("Sphinx"));
+        catsList.remove(1);
         System.out.println(catsList);
+        Cat cat = catsList.get(2);
+        System.out.println(catsList.indexOf(cat));
+        System.out.println(cat);
+        catsList.add(1, cat);
+        catsList.set(3, new Cat("hobo cat"));
+        System.out.println(catsList);
+        catsList.removeAll(Arrays.asList(cats,  catsList.get(2)));
+        System.out.println(catsList);
+
 
     }
 }
