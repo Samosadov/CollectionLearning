@@ -1,5 +1,8 @@
 package ru_synergy;
 
+import org.w3c.dom.ls.LSOutput;
+
+import javax.crypto.spec.PSource;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -66,5 +69,18 @@ public class Main {
 
         System.out.println(cars.pollFirst());
         System.out.println(cars);
+
+        // ArrayList vs LinkedList
+        List<Integer> list = new LinkedList<>();
+        for (int i = 0; i < 5000000; i++) list.add(new Integer(i));
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < 100; i++) list.add(2000000, Integer.MAX_VALUE);
+        System.out.printf("LinkedList time: %d\n", System.currentTimeMillis() - start);
+
+        List<Integer> listarr = new ArrayList<>();
+        for (int i = 0; i < 5000000; i++) list.add(new Integer(i));
+        start = System.currentTimeMillis();
+        for (int i = 0; i < 100; i++) list.add(2000000, Integer.MAX_VALUE);
+        System.out.printf("ArrayList time: %d\n", System.currentTimeMillis() - start);
     }
 }
