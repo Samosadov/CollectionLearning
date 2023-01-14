@@ -1,5 +1,8 @@
 package ru_synergy;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -10,5 +13,11 @@ public class Main {
         cats[2] = new Cat("Murzik");
 
         for (Cat cat : cats) System.out.println(cat);
+
+        ArrayList<Cat> catsList = new ArrayList<>();
+        catsList.addAll(List.of(cats));
+        catsList.add(new Cat("Sphinx"));
+        System.out.println(catsList);
+
     }
 }
