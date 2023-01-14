@@ -52,5 +52,19 @@ public class Main {
         System.out.println(nwa_presong);
         nwa_presong.remove();
         System.out.println(nwa_presong);
+
+        LinkedList<Car> cars = new LinkedList<>();
+        Car ferrari = new Car("sputnik");
+        Car mersedes = new Car("Niva");
+        Car bmv = new Car("Lada");
+        cars.addAll(Arrays.asList(ferrari, mersedes, bmv));
+        System.out.println(cars);
+
+        cars.addFirst(new Car("zaporizhets"));
+        cars.addLast(new Car("kalina"));
+        System.out.println(cars);
+
+        System.out.println(cars.pollFirst());
+        System.out.println(cars);
     }
 }
